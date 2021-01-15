@@ -1,5 +1,5 @@
-[
-  {
+{
+  "customers":{
     "id":1,
     "name": "ted James",
     "city": " Phoenix",
@@ -23,4 +23,4 @@
     "city": "Seattle",
     "orderTotal": 15.99
   }
-]
+}
