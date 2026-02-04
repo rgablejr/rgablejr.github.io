@@ -1,0 +1,14 @@
+{
+  "functions": [
+    {
+      "id": "ADD",
+      "name": "ADD",
+      "description": "Adds two numbers",
+      "parameters": [
+        { "name": "first", "description": "first number", "type": "number" },
+        { "name": "second", "description": "second number", "type": "number" }
+      ],
+      "result": { "type": "number" }
+    }
+  ]
+}
