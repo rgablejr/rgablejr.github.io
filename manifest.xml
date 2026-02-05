@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appsharepointwebbundle/1.0" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" 
+ xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" 
+ xsi:type="TaskPaneApp">
+
+ <Id>64b3a62d-0000-4e3a-9c7a-8f673e528999</Id>
+ <Version>1.0.0.0</Version>
+ <ProviderName>My Company</ProviderName>
+ <DefaultLocale>en-US</DefaultLocale>
+ <DisplayName resid="App.Name" />
+ <Description resid="App.Description" />
+
+ <IconUrl resid="Icon.32" />
+ 
+ <Hosts>
+ <Host Name="Workbook" /> </Hosts>
+
+ <DefaultSettings>
+ <SourceLocation DefaultValue="https://github.com/rgablejr/rgablejr.github.io/index.html" />
+ </DefaultSettings>
+
+ <Permissions>ReadWriteDocument</Permissions>
+
+ <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+ <Hosts>
+ <Host xsi:type="Workbook">
+ <DesktopFormFactor>
+ 
+ <FunctionFile resid="Commands.Url" />
+
+ <ExtensionPoint xsi:type="PrimaryCommandSurface">
+ <CustomTab id="MyCustomTab">
+ <Group id="MyGroup">
+ <Label resid="Group.Label" />
+ 
+ <Control xsi:type="Button" id="MyFunctionButton">
+ <Label resid="Button.Label" />
+ <Supertip>
+ <Title resid="Button.Label" />
+ <Description resid="Button.Tooltip" />
+ </Supertip>
+ <Icon>
+ <bt:Image size="16" resid="Icon.16" />
+ <bt:Image size="32" resid="Icon.32" />
+ <bt:Image size="80" resid="Icon.80" />
+ </Icon>
+ 
+ <Action xsi:type="ExecuteFunction">
+ <FunctionName>myRibbonAction</FunctionName>
+ </Action>
+ </Control>
+ </Group>
+ <Label resid="Tab.Label" />
+ </CustomTab>
+ </ExtensionPoint>
+ </DesktopFormFactor>
+ </Host>
+ </Hosts>
+
+ <Resources>
+ <bt:Images>
+ <bt:Image id="Icon.16" DefaultValue="https://github.com/rgablejr/rgablejr.github.io/assets/icon-16.png" />
+ <bt:Image id="Icon.32" DefaultValue="https://github.com/rgablejr/rgablejr.github.io/assets/icon-32.png" />
+ <bt:Image id="Icon.80" DefaultValue="https://github.com/rgablejr/rgablejr.github.io/assets/icon-80.png" />
+ </bt:Images>
+ <bt:Urls>
+ <bt:Url id="Commands.Url" DefaultValue="https://github.com/rgablejr/rgablejr.github.io/functions.html" />
+ </bt:Urls>
+ <bt:ShortStrings>
+ <bt:String id="App.Name" DefaultValue="Data Tool" />
+ <bt:String id="Tab.Label" DefaultValue="MY TOOLBOX" />
+ <bt:String id="Group.Label" DefaultValue="Actions" />
+ <bt:String id="Button.Label" DefaultValue="Run Process" />
+ </bt:ShortStrings>
+ <bt:LongStrings>
+ <bt:String id="App.Description" DefaultValue="Executes a specific process on the active sheet." />
+ <bt:String id="Button.Tooltip" DefaultValue="Click to run the background script." />
+ </bt:LongStrings>
+ </Resources>
+ </VersionOverrides>
+</OfficeApp>
