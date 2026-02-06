@@ -31,8 +31,23 @@
   </Hosts>
   
   <Resources>
+  <bt:Images>
+    <bt:Image id="Icon16" DefaultValue="https://github.com/rgablejr/rgablejr.github.io/assets/icon-16.png" />
+    <bt:Image id="Icon32" DefaultValue="https://github.com/rgablejr/rgablejr.github.io/assets/icon-32.png" />
+    <bt:Image id="Icon80" DefaultValue="https://github.com/rgablejr/rgablejr.github.io/assets/icon-80.png" />
+  </bt:Images>
+  
     <bt:Urls>
       <bt:Url id="Commands.Url" DefaultValue="https://github.com/rgablejr/rgablejr.github.io/functions.html" />
     </bt:Urls>
+
+	<bt:ShortStrings>
+		<bt:String id="GroupLabel" DefaultValue="GitHub Tools" />
+		<bt:String id="ButtonLabel" DefaultValue="Run My Function" />
+	  </bt:ShortStrings>
+	  
+	  <bt:LongStrings>
+		<bt:String id="ButtonTip" DefaultValue="Click this to run custom logic from GitHub Pages without a task pane." />
+	  </bt:LongStrings>	
     </Resources>
 </VersionOverrides>
