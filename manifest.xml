@@ -1,3 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp 
+    xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:type="TaskPaneApp"> <Id>829f3c7b-91d4-4a5e-ae18-c7793d4569a2</Id>
+  
+  <Version>1.0.0.0</Version>
+  <ProviderName>Your Name</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="My Command Add-in" />
+  <Description DefaultValue="A ribbon-only add-in hosted on GitHub Pages." />
+  
+  </OfficeApp>
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
   <Hosts>
     <Host xsi:type="Workbook">
