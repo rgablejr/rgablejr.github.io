@@ -35,7 +35,7 @@
 				
 				  <CustomTab id="MyTab">
 					<Group id="MyCommandsGroup">
-					  <Label resid="MyCommandsGroup.Label" />
+					  <Label resid="MyCommandsGroup.Label" />						
 						<Icon>
 						  <bt:Image size="16" resid="Icon16" />
 						  <bt:Image size="32" resid="Icon32" />
@@ -43,21 +43,26 @@
 						</Icon> 
 						
 					  <Control xsi:type="Button" id="MyButton">
-						<Size xsi:type="ControlSizeLarge" />
+						<!--<Size xsi:type="ControlSizeLarge" />-->
 						<Label resid="ButtonLabel.Label" />
-						<OfficeControl id="Settings" />
-						<Action xsi:type="ExecuteFunction">
-						  <FunctionName>highlightSelection</FunctionName>
-						</Action>
+						
 						<Supertip>
 						  <Title resid="ButtonLabel.Label" />
 						  <Description resid="ButtonTip.Tooltip" />
 						</Supertip>
+
 						<Icon>
 						  <bt:Image size="16" resid="Icon16" />
 						  <bt:Image size="32" resid="Icon32" />
 						  <bt:Image size="80" resid="Icon80" />
-						</Icon> 						
+						</Icon> 
+
+						<Action xsi:type="ExecuteFunction">
+						  <FunctionName>highlightSelection</FunctionName>
+						</Action>
+						
+						<OfficeControl id="Settings" />						
+						
 					  </Control>
 
 					</Group>
@@ -89,7 +94,7 @@
 	  </bt:ShortStrings>
 	
 	<bt:LongStrings>
-		<bt:String id="ButtonTip.Tooltip" DefaultValue="Click this to run custom logic from GitHub Pages without a task pane." />
+		<bt:String id="ButtonTip.Tooltip" DefaultValue="Applies a random color to a range of cells." />
 	</bt:LongStrings>	  
 	  
     </Resources>
