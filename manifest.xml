@@ -52,17 +52,9 @@
 						  <Description resid="ButtonTip.Tooltip" />
 						</Supertip>
 
-						<Icon>
-						  <bt:Image size="16" resid="Icon16" />
-						  <bt:Image size="32" resid="Icon32" />
-						  <bt:Image size="80" resid="Icon80" />
-						</Icon> 
-
 						<Action xsi:type="ExecuteFunction">
 						  <FunctionName>highlightSelection</FunctionName>
 						</Action>
-						
-										
 						
 					  </Control>
 
@@ -76,12 +68,6 @@
     </Hosts>
 
     <Resources>
-	  <bt:Images>
-        <bt:Image id="Icon16" DefaultValue="https://rgablejr.github.io/assets/icon-16.png" />
-        <bt:Image id="Icon32" DefaultValue="https://rgablejr.github.io/assets/icon-32.png" />
-        <bt:Image id="Icon80" DefaultValue="https://rgablejr.github.io/assets/icon-80.png" />
-      </bt:Images>
-
       <bt:Urls>
         <!-- This must point to the HTML document with the task pane -->
         <!-- <bt:Url id="Taskpane.Url" DefaultValue="https://rgablejr.github.io/index.html"/> -->
