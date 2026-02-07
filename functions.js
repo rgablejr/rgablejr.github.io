@@ -1,22 +1,26 @@
-// Initialize Office
+// Initialize the Office Add-in.
 Office.onReady(() => {
-    // Office is ready
+  // If needed, Office.js is ready to be called.
 });
 
-function helloWorld(event) {
-    Excel.run(async (context) => {
-        const range = context.workbook.getSelectedRange();
-        range.values = [["Hello from the Ribbon!"]];
-        range.format.fill.color = "yellow";
-        
-        await context.sync();
-    }).catch((error) => {
-        console.error(error);
-    }).finally(() => {
-        // IMPORTANT: You must signal that the function is done
-        event.completed();
-    });
+// The command function.
+async function highlightSelection(event) {
+
+    // Implement your custom code here. The following code is a simple Excel example.
+    try {
+          await Excel.run(async (context) => {
+              const range = context.workbook.getSelectedRange();
+              range.format.fill.color = "red";
+              await context.sync();
+          });
+      } catch (error) {
+          // Note: In a production add-in, notify the user through your add-in's UI.
+          console.error(error);
+      }
+
+    // Calling event.completed is required. The event.completed call lets the platform know that processing has completed.
+    event.completed();
 }
 
-// Map the function name in the manifest to the JS function
-Office.actions.associate("helloWorld", helloWorld);
+// This maps the function to the action ID specified in the manifest.
+Office.actions.associate("highlightSelection", highlightSelection);

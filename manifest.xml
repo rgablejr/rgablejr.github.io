@@ -4,13 +4,16 @@
   xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
   xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
   
-	<Id>829f3c7b-91d4-4a5e-ae18-c7793d4569a2</Id>
+  <Id>829f3c7b-91d4-4a5e-ae18-c7793d4569a2</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>RST</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="My Command Add-in" />
   <Description DefaultValue="A ribbon-only add-in hosted on GitHub Pages." />  
   
+   <AppDomains>
+    <AppDomain>https://rgablejr.github.io/</AppDomain>
+  </AppDomains>
   
   <Hosts>
 	<Host Name="Workbook"/>
@@ -26,19 +29,22 @@
     <Hosts>
       <Host xsi:type="Workbook">
 	  <FunctionFile resid="Commands.Url" />
-	  
 		<DesktopFormFactor>
 				<ExtensionPoint xsi:type="PrimaryCommandSurface">
 				
 				  <CustomTab id="MyCustomTab">
 					<Group id="MyGroup">
 					  <Label resid="GroupLabel.Label" />
-				
+						<Icon>
+						  <bt:Image size="16" resid="Icon.16x16" />
+						  <bt:Image size="32" resid="Icon.32x32" />
+						  <bt:Image size="80" resid="Icon.80x80" />
+						</Icon>				
 					  <Control xsi:type="Button" id="MyButton">
 						<Label resid="ButtonLabel.Label" />
 						<Supertip>
 						  <Title resid="ButtonLabel.Label" />
-						  <Description resid="ButtonTip.ToolTip" />
+						  <Description resid="ButtonTip.Tooltip" />
 						</Supertip>
 						<Icon>
 						  <bt:Image size="16" resid="Icon16" />
@@ -46,12 +52,12 @@
 						  <bt:Image size="80" resid="Icon80 />
 						</Icon>
 						<Action xsi:type="ExecuteFunction">
-						  <FunctionName>helloWorld</FunctionName>
+						  <FunctionName>highlightSelection</FunctionName>
 						</Action>
 					  </Control>
 					  
 					</Group>
-					
+					<Label resid="MyCustomTab.TabLabel" />
 				  </CustomTab>
 				</ExtensionPoint>
 				
@@ -73,12 +79,13 @@
       </bt:Urls>
 	  
 	<bt:ShortStrings>
+		<bt:String id="MyCustomTab.TabLabel" DefaultValue="Desktop Toolkit" />
 		<bt:String id="GroupLabel.Label" DefaultValue="GitHub Tools" />
 		<bt:String id="ButtonLabel.Label" DefaultValue="Run My Function" />
 	  </bt:ShortStrings>
 	
 	<bt:LongStrings>
-		<bt:String id="ButtonTip.ToolTip" DefaultValue="Click this to run custom logic from GitHub Pages without a task pane." />
+		<bt:String id="ButtonTip.Tooltip" DefaultValue="Click this to run custom logic from GitHub Pages without a task pane." />
 	</bt:LongStrings>	  
 	  
     </Resources>
