@@ -44,7 +44,7 @@
 						
 					  <Control xsi:type="Button" id="MyButton">
 						<OfficeControl id="Settings" />		
-						<!--<Size xsi:type="ControlSizeLarge" />-->
+						<Size xsi:type="ControlSizeLarge" />
 						<Label resid="ButtonLabel.Label" />
 						
 						<Supertip>
