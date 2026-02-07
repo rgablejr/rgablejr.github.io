@@ -32,9 +32,9 @@
 		<DesktopFormFactor>
 				<ExtensionPoint xsi:type="PrimaryCommandSurface">
 				
-				  <CustomTab id="MyCustomTab">
-					<Group id="MyGroup">
-					  <Label resid="GroupLabel.Label" />
+				  <CustomTab id="MyTab">
+					<Group id="MyCommandsGroup">
+					  <Label resid="MyCommandsGroup.Label" />
 						<Icon>
 						  <bt:Image size="16" resid="Icon16" />
 						  <bt:Image size="32" resid="Icon32" />
@@ -58,7 +58,7 @@
 					  </Control>
 					  
 					</Group>
-					<Label resid="MyCustomTab.TabLabel" />
+					<Label resid="MyTab.TabLabel" />
 				  </CustomTab>
 				</ExtensionPoint>
 				
@@ -80,8 +80,8 @@
       </bt:Urls>
 	  
 	<bt:ShortStrings>
-		<bt:String id="MyCustomTab.TabLabel" DefaultValue="Desktop Toolkit" />
-		<bt:String id="GroupLabel.Label" DefaultValue="GitHub Tools" />
+		<bt:String id="MyTab.TabLabel" DefaultValue="Desktop Toolkit" />
+		<bt:String id="MyCommandsGroup.Label" DefaultValue="GitHub Tools" />
 		<bt:String id="ButtonLabel.Label" DefaultValue="Run My Function" />
 	  </bt:ShortStrings>
 	
