@@ -1,66 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<OfficeApp 
-    xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xsi:type="TaskPaneApp"> <Id>829f3c7b-91d4-4a5e-ae18-c7793d4569a2</Id>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+  xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
   
+	<Id>829f3c7b-91d4-4a5e-ae18-c7793d4569a2</Id>
   <Version>1.0.0.0</Version>
-  <ProviderName>Your Name</ProviderName>
+  <ProviderName>RST</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="My Command Add-in" />
-  <Description DefaultValue="A ribbon-only add-in hosted on GitHub Pages." />
+  <Description DefaultValue="A ribbon-only add-in hosted on GitHub Pages." />  
   
-  </OfficeApp>
-<VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+  
   <Hosts>
-    <Host xsi:type="Workbook">
-      <FunctionFile resid="Commands.Url" />
-      
-      <DesktopFormFactor>
-        <ExtensionPoint xsi:type="PrimaryCommandSurface">
-          <CustomTab id="MyCustomTab">
-            <Group id="MyGroup">
-              <Label resid="GroupLabel" />
-              <Control xsi:type="Button" id="MyButton">
-                <Label resid="ButtonLabel" />
-                <Supertip>
-                  <Title resid="ButtonLabel" />
-                  <Description resid="ButtonTip" />
-                </Supertip>
-                <Icon>
-                  <bt:Image size="16" resid="Icon16" />
-                  <bt:Image size="32" resid="Icon32" />
-                  <bt:Image size="80" resid="Icon80" />
-                </Icon>
-                <Action xsi:type="ExecuteFunction">
-                  <FunctionName>helloWorld</FunctionName>
-                </Action>
-              </Control>
-            </Group>
-          </CustomTab>
-        </ExtensionPoint>
-      </DesktopFormFactor>
-    </Host>
+	<Host Name="Workbook"/>
   </Hosts>
   
-  <Resources>
-  <bt:Images>
-    <bt:Image id="Icon16" DefaultValue="https://github.com/rgablejr/rgablejr.github.io/assets/icon-16.png" />
-    <bt:Image id="Icon32" DefaultValue="https://github.com/rgablejr/rgablejr.github.io/assets/icon-32.png" />
-    <bt:Image id="Icon80" DefaultValue="https://github.com/rgablejr/rgablejr.github.io/assets/icon-80.png" />
-  </bt:Images>
+  <DefaultSettings>
+  <SourceLocation DefaultValue="https://rgablejr.github.io/functions.html" />
+  </DefaultSettings>
   
-    <bt:Urls>
-      <bt:Url id="Commands.Url" DefaultValue="https://github.com/rgablejr/rgablejr.github.io/functions.html" />
-    </bt:Urls>
-
-	<bt:ShortStrings>
-		<bt:String id="GroupLabel" DefaultValue="GitHub Tools" />
-		<bt:String id="ButtonLabel" DefaultValue="Run My Function" />
-	  </bt:ShortStrings>
+ <Permissions>ReadWriteDocument</Permissions>
+ 
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Workbook">
+	  <FunctionFile resid="Commands.Url" />
 	  
-	  <bt:LongStrings>
-		<bt:String id="ButtonTip" DefaultValue="Click this to run custom logic from GitHub Pages without a task pane." />
-	  </bt:LongStrings>	
+        <DesktopFormFactor>
+          <!-- resid must point to a Url Resource -->
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+
+            <CustomTab id="MyTab">
+              <Group id="MyCommandsGroup">
+                <Label resid="MyCommandsGroup.Label" />
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16" />
+                  <bt:Image size="32" resid="Icon.32x32" />
+                  <bt:Image size="80" resid="Icon.80x80" />
+                </Icon>
+
+                <!-- Ribbon button that opens the task pane -->
+                <Control xsi:type="Button" id="MyTaskpaneButton">
+                  <Label resid="MyTaskpaneButton.Label" />
+                  <Supertip>
+                    <Title resid="MyTaskpaneButton.Label" />
+                    <Description resid="MyTaskpaneButton.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16" />
+                    <bt:Image size="32" resid="Icon.32x32" />
+                    <bt:Image size="80" resid="Icon.80x80" />
+                  </Icon>
+                  <!-- Action type must be ShowTaskpane -->
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>ButtonId1</TaskpaneId>
+                    <!-- resid must point to a Url Resource -->
+                    <SourceLocation resid="Taskpane.Url" />
+                  </Action>
+                </Control>
+
+              </Group>
+              <Label resid="MyTab.TabLabel" />
+            </CustomTab>
+
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16x16" DefaultValue="https://rgablejr.github.io/assets/icon-16.png" />
+        <bt:Image id="Icon.32x32" DefaultValue="https://rgablejr.github.io/assets/icon-32.png" />
+        <bt:Image id="Icon.80x80" DefaultValue="https://rgablejr.github.io/assets/icon-80.png" />
+      </bt:Images>
+      <bt:Urls>
+        <!-- This must point to the HTML document with the task pane -->
+        <bt:Url id="Taskpane.Url" DefaultValue="https://rgablejr.github.io/index.html"/>
+		<bt:Url id="Commands.Url" DefaultValue="https://rgablejr.github.io/functions.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="MyTab.TabLabel" DefaultValue="Desktop Toolkit" />
+        <bt:String id="MyCommandsGroup.Label" DefaultValue="MyGroup" />
+        <bt:String id="MyTaskpaneButton.Label" DefaultValue="Show Taskpane" />
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="MyTaskpaneButton.Tooltip" DefaultValue="Click to show the task pane" />
+      </bt:LongStrings>
     </Resources>
-</VersionOverrides>
+
+  </VersionOverrides>
+</OfficeApp>
