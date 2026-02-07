@@ -43,6 +43,7 @@
 						</Icon> 
 						
 					  <Control xsi:type="Button" id="MyButton">
+						<OfficeControl id="Settings" />		
 						<!--<Size xsi:type="ControlSizeLarge" />-->
 						<Label resid="ButtonLabel.Label" />
 						
@@ -61,7 +62,7 @@
 						  <FunctionName>highlightSelection</FunctionName>
 						</Action>
 						
-						<OfficeControl id="Settings" />						
+										
 						
 					  </Control>
 
