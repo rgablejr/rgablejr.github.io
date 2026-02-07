@@ -83,7 +83,7 @@
 	<bt:ShortStrings>
 		<bt:String id="MyTab.TabLabel" DefaultValue="Desktop Toolkit" />
 		<bt:String id="MyCommandsGroup.Label" DefaultValue="My Custom Group Name" />
-		<bt:String id="ButtonLabel.Label" DefaultValue="Color Cell" />
+		<bt:String id="ButtonLabel.Label" DefaultValue="Apply Random Color" />
 	  </bt:ShortStrings>
 	
 	<bt:LongStrings>

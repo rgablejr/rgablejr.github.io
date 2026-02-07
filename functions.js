@@ -10,7 +10,11 @@ async function highlightSelection(event) {
     try {
           await Excel.run(async (context) => {
               const range = context.workbook.getSelectedRange();
-              range.format.fill.color = "red";
+			  const colors = ['red', 'green', 'blue', 'orange', 'yellow', 'purple'];
+			  const randomIndex = Math.floor(Math.random() * colors.length);
+			  const randomColor = colors[randomIndex];
+			  
+              range.format.fill.color = randomColor;
               await context.sync();
           });
       } catch (error) {
