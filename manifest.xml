@@ -53,6 +53,9 @@
 						  <bt:Image size="32" resid="Icon32" />
 						  <bt:Image size="80" resid="Icon80" />
 						</Icon>
+						
+						<OfficeControl id="FunctionsInsert" />
+						
 						<Action xsi:type="ExecuteFunction">
 						  <FunctionName>highlightSelection</FunctionName>
 						</Action>
