@@ -43,10 +43,10 @@
 						</Icon> 
 						
 					  <Control xsi:type="Button" id="MyButton">
-						<OfficeControl id="Settings" />		
+						
 						<Size xsi:type="ControlSizeLarge" />
 						<Label resid="ButtonLabel.Label" />
-						
+						<OfficeControl id="Settings" />		
 						<Supertip>
 						  <Title resid="ButtonLabel.Label" />
 						  <Description resid="ButtonTip.Tooltip" />
