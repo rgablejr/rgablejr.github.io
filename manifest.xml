@@ -36,11 +36,11 @@
 				  <CustomTab id="MyTab">
 					<Group id="MyCommandsGroup">
 					  <Label resid="MyCommandsGroup.Label" />
-						<Icon>
+						<!--<Icon>
 						  <bt:Image size="16" resid="Icon16" />
 						  <bt:Image size="32" resid="Icon32" />
 						  <bt:Image size="80" resid="Icon80" />
-						</Icon>
+						</Icon> -->
 						
 					  <Control xsi:type="Button" id="MyButton">
 						<Size xsi:type="ControlSizeLarge" />
@@ -49,11 +49,11 @@
 						  <Title resid="ButtonLabel.Label" />
 						  <Description resid="ButtonTip.Tooltip" />
 						</Supertip>
-						<Icon>
+						<!--<Icon>
 						  <bt:Image size="16" resid="Icon16" />
 						  <bt:Image size="32" resid="Icon32" />
 						  <bt:Image size="80" resid="Icon80" />
-						</Icon>
+						</Icon> -->
 						
 						<OfficeControl id="FunctionsInsert" />
 						
