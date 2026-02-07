@@ -45,23 +45,21 @@
 					  <Control xsi:type="Button" id="MyButton">
 						<Size xsi:type="ControlSizeLarge" />
 						<Label resid="ButtonLabel.Label" />
+						<OfficeControl id="Settings" />
+						<Action xsi:type="ExecuteFunction">
+						  <FunctionName>highlightSelection</FunctionName>
+						</Action>
 						<Supertip>
 						  <Title resid="ButtonLabel.Label" />
 						  <Description resid="ButtonTip.Tooltip" />
 						</Supertip>
-						<!--<Icon>
+						<Icon>
 						  <bt:Image size="16" resid="Icon16" />
 						  <bt:Image size="32" resid="Icon32" />
 						  <bt:Image size="80" resid="Icon80" />
-						</Icon> -->
-						
-						<OfficeControl id="FunctionsInsert" />
-						
-						<Action xsi:type="ExecuteFunction">
-						  <FunctionName>highlightSelection</FunctionName>
-						</Action>
+						</Icon> 						
 					  </Control>
-					  
+
 					</Group>
 					<Label resid="MyTab.TabLabel" />
 				  </CustomTab>
