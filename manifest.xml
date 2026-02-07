@@ -28,8 +28,9 @@
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Hosts>
       <Host xsi:type="Workbook">
-	  <FunctionFile resid="Commands.Url" />
+	
 		<DesktopFormFactor>
+			<FunctionFile resid="Commands.Url" />
 				<ExtensionPoint xsi:type="PrimaryCommandSurface">
 				
 				  <CustomTab id="MyTab">
@@ -81,8 +82,8 @@
 	  
 	<bt:ShortStrings>
 		<bt:String id="MyTab.TabLabel" DefaultValue="Desktop Toolkit" />
-		<bt:String id="MyCommandsGroup.Label" DefaultValue="GitHub Tools" />
-		<bt:String id="ButtonLabel.Label" DefaultValue="Run My Function" />
+		<bt:String id="MyCommandsGroup.Label" DefaultValue="My Custom Group Name" />
+		<bt:String id="ButtonLabel.Label" DefaultValue="Color Cell" />
 	  </bt:ShortStrings>
 	
 	<bt:LongStrings>
