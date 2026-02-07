@@ -39,7 +39,8 @@
 						  <bt:Image size="16" resid="Icon.16x16" />
 						  <bt:Image size="32" resid="Icon.32x32" />
 						  <bt:Image size="80" resid="Icon.80x80" />
-						</Icon>				
+						</Icon>
+						
 					  <Control xsi:type="Button" id="MyButton">
 						<Label resid="ButtonLabel.Label" />
 						<Supertip>
@@ -49,7 +50,7 @@
 						<Icon>
 						  <bt:Image size="16" resid="Icon16" />
 						  <bt:Image size="32" resid="Icon32" />
-						  <bt:Image size="80" resid="Icon80 />
+						  <bt:Image size="80" resid="Icon80" />
 						</Icon>
 						<Action xsi:type="ExecuteFunction">
 						  <FunctionName>highlightSelection</FunctionName>
