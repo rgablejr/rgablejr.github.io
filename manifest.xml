@@ -43,6 +43,7 @@
 						</Icon>
 						
 					  <Control xsi:type="Button" id="MyButton">
+						<Size xsi:type="ControlSizeLarge" />
 						<Label resid="ButtonLabel.Label" />
 						<Supertip>
 						  <Title resid="ButtonLabel.Label" />
