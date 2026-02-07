@@ -32,13 +32,13 @@
 				
 				  <CustomTab id="MyCustomTab">
 					<Group id="MyGroup">
-					  <Label resid="GroupLabel" />
+					  <Label resid="GroupLabel.Label" />
 				
 					  <Control xsi:type="Button" id="MyButton">
-						<Label resid="ButtonLabel" />
+						<Label resid="ButtonLabel.Label" />
 						<Supertip>
-						  <Title resid="ButtonLabel" />
-						  <Description resid="ButtonTip" />
+						  <Title resid="ButtonLabel.Label" />
+						  <Description resid="ButtonTip.ToolTip" />
 						</Supertip>
 						<Icon>
 						  <bt:Image size="16" resid="Icon16" />
@@ -73,12 +73,12 @@
       </bt:Urls>
 	  
 	<bt:ShortStrings>
-		<bt:String id="GroupLabel" DefaultValue="GitHub Tools" />
-		<bt:String id="ButtonLabel" DefaultValue="Run My Function" />
+		<bt:String id="GroupLabel.Label" DefaultValue="GitHub Tools" />
+		<bt:String id="ButtonLabel.Label" DefaultValue="Run My Function" />
 	  </bt:ShortStrings>
 	
 	<bt:LongStrings>
-		<bt:String id="ButtonTip" DefaultValue="Click this to run custom logic from GitHub Pages without a task pane." />
+		<bt:String id="ButtonTip.ToolTip" DefaultValue="Click this to run custom logic from GitHub Pages without a task pane." />
 	</bt:LongStrings>	  
 	  
     </Resources>
