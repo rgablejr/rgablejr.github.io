@@ -6,10 +6,11 @@
   
   <Id>829f3c7b-91d4-4a5e-ae18-c7793d4569a2</Id>
   <Version>1.0.0.0</Version>
-  <ProviderName>RST</ProviderName>
+  <ProviderName>Rapid Solutions Team</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="My Command Add-in" />
+  <DisplayName DefaultValue="Desktop Toolkit" />
   <Description DefaultValue="A ribbon-only add-in hosted on GitHub Pages." />  
+  <IconUrl DefaultValue="https://rgablejr.github.io/assets/icon-32.png" />
   
    <AppDomains>
     <AppDomain>https://rgablejr.github.io/</AppDomain>
@@ -20,72 +21,61 @@
   </Hosts>
   
   <DefaultSettings>
-  <SourceLocation DefaultValue="https://rgablejr.github.io/functions.html" />
+	<SourceLocation DefaultValue="https://rgablejr.github.io/functions.html" />
   </DefaultSettings>
   
  <Permissions>ReadWriteDocument</Permissions>
  
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
-    <Hosts>
+ 	  
+	<Hosts>
       <Host xsi:type="Workbook">
-	
-		<DesktopFormFactor>
-			<FunctionFile resid="Commands.Url" />
+		<FunctionFile resid="Commands.Url" />
+		
+		<DesktopFormFactor>	
 				<ExtensionPoint xsi:type="PrimaryCommandSurface">
-				
-				  <CustomTab id="MyTab">
-					<Group id="MyCommandsGroup">
-					  <Label resid="MyCommandsGroup.Label" />						
-						<Icon>
-						  <bt:Image size="16" resid="Icon16" />
-						  <bt:Image size="32" resid="Icon32" />
-						  <bt:Image size="80" resid="Icon80" />
-						</Icon> 
+					<CustomTab id="MyTab">
+						<Group id="MyGroup">
+							<Label resid="MyGroup.Label" />						
+							
+							<Control xsi:type="Button" id="MyButton">
+								<Label resid="MyButton.Label" />
+							
+								<Supertip>
+									<Title resid="MyButton.Label" />
+									<Description resid="MyButton.Tooltip" />
+								</Supertip>
+								
+								<OfficeControl id="FunctionsInsert" />
+															
+								<Action xsi:type="ExecuteFunction">
+									<FunctionName>highlightSelection</FunctionName>
+								</Action>
+							</Control>
 						
-					  <Control xsi:type="Button" id="MyButton">
-						<Size xsi:type="ControlSizeLarge" />
-						
-						<Label resid="ButtonLabel.Label" />
-						<OfficeControl id="FunctionsInsert" />	
-						
-						<Supertip>
-						  <Title resid="ButtonLabel.Label" />
-						  <Description resid="ButtonTip.Tooltip" />
-						</Supertip>
-
-						<Action xsi:type="ExecuteFunction">
-						  <FunctionName>highlightSelection</FunctionName>
-						</Action>
-						
-					  </Control>
-
-					</Group>
-					<Label resid="MyTab.TabLabel" />
-				  </CustomTab>
+						</Group>
+					  </CustomTab>
 				</ExtensionPoint>
-				
-			  </DesktopFormFactor>
+		</DesktopFormFactor>
       </Host>
     </Hosts>
 
-    <Resources>
-      <bt:Urls>
-        <!-- This must point to the HTML document with the task pane -->
-        <!-- <bt:Url id="Taskpane.Url" DefaultValue="https://rgablejr.github.io/index.html"/> -->
-		<bt:Url id="Commands.Url" DefaultValue="https://rgablejr.github.io/functions.html"/>
-      </bt:Urls>
+    <Resources>	  
+		<bt:Urls>
+			<bt:Url id="Commands.Url" DefaultValue="https://rgablejr.github.io/functions.html"/>
+		</bt:Urls>
 	  
-	<bt:ShortStrings>
-		<bt:String id="MyTab.TabLabel" DefaultValue="Desktop Toolkit" />
-		<bt:String id="MyCommandsGroup.Label" DefaultValue="My Custom Group Name" />
-		<bt:String id="ButtonLabel.Label" DefaultValue="Apply Random Color" />
-	  </bt:ShortStrings>
+		<bt:ShortStrings>
+			<bt:String id="MyTab.Label" DefaultValue="Desktop Toolkit" />
+			<bt:String id="MyGroup.Label" DefaultValue="My Custom Group Name" />
+			<bt:String id="MyButton.Label" DefaultValue="Apply Random Color" />
+			<bt:String id="ClearLabel.Label" DefaultValue="Clear Logs" /> 			
+		 </bt:ShortStrings>
 	
-	<bt:LongStrings>
-		<bt:String id="ButtonTip.Tooltip" DefaultValue="Applies a random color to a range of cells." />
-	</bt:LongStrings>	  
-	  
+		<bt:LongStrings>
+			<bt:String id="MyButton.Tooltip" DefaultValue="Applies a random color to a range of cells." />
+		</bt:LongStrings>	  
     </Resources>
-
+	  
   </VersionOverrides>
 </OfficeApp>
