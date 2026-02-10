@@ -11,7 +11,8 @@
   <DisplayName DefaultValue="Desktop Toolkit" />
   <Description DefaultValue="A ribbon-only add-in hosted on GitHub Pages." />  
   <IconUrl DefaultValue="https://rgablejr.github.io/assets/icon-32.png" />
-  
+  <SupportUrl DefaultValue="https://rgablejr.github.io/contact" />
+   
    <AppDomains>
     <AppDomain>https://rgablejr.github.io/</AppDomain>
   </AppDomains>
@@ -23,57 +24,74 @@
   <DefaultSettings>
 	<SourceLocation DefaultValue="https://rgablejr.github.io/functions.html" />
   </DefaultSettings>
-  
- <Permissions>ReadWriteDocument</Permissions>
- 
+
+	<Permissions>ReadWriteDocument</Permissions>
+	
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
  	  
 	<Hosts>
       <Host xsi:type="Workbook">
-		<FunctionFile resid="Commands.Url" />
-		
+
 		<DesktopFormFactor>	
+				<FunctionFile resid="Commands.Url" />
 				<ExtensionPoint xsi:type="PrimaryCommandSurface">
 					<CustomTab id="MyTab">
 						<Group id="MyGroup">
-							<Label resid="MyGroup.Label" />						
+							<Label resid="MyGroup.Label" />	
 							
-							<Control xsi:type="Button" id="MyButton">
-								<Label resid="MyButton.Label" />
+							<Icon>
+							  <bt:Image size="16" resid="Icon16" />
+							  <bt:Image size="32" resid="Icon32" />
+							  <bt:Image size="80" resid="Icon80" />
+							</Icon>							
+							
+							<Control xsi:type="Button" id="RunBtn">
+								<Label resid="RunBtn.Label" />
 							
 								<Supertip>
-									<Title resid="MyButton.Label" />
-									<Description resid="MyButton.Tooltip" />
+									<Title resid="RunBtn.Label" />
+									<Description resid="RunBtn.Tooltip" />
 								</Supertip>
-								
-								<OfficeControl id="FunctionsInsert" />
-															
+
+								<Icon>
+								  <bt:Image size="16" resid="Icon16" />
+								  <bt:Image size="32" resid="Icon32" />
+								  <bt:Image size="80" resid="Icon80" />
+								</Icon>	
+												
 								<Action xsi:type="ExecuteFunction">
 									<FunctionName>highlightSelection</FunctionName>
 								</Action>
+								
 							</Control>
 						
 						</Group>
-					  </CustomTab>
+						<Label resid="MyTab.Label" />
+					 </CustomTab>
 				</ExtensionPoint>
 		</DesktopFormFactor>
       </Host>
     </Hosts>
 
     <Resources>	  
+		<bt:Images>
+			<bt:Image id="Icon16" DefaultValue="https://rgablejr.github.io/assets/icon-16.png" />
+			<bt:Image id="Icon32" DefaultValue="https://rgablejr.github.io/assets/icon-32.png" />
+			<bt:Image id="Icon80" DefaultValue="https://rgablejr.github.io/assets/icon-80.png" />
+		 </bt:Images>
+		 
 		<bt:Urls>
 			<bt:Url id="Commands.Url" DefaultValue="https://rgablejr.github.io/functions.html"/>
 		</bt:Urls>
-	  
+		
 		<bt:ShortStrings>
 			<bt:String id="MyTab.Label" DefaultValue="Desktop Toolkit" />
-			<bt:String id="MyGroup.Label" DefaultValue="My Custom Group Name" />
-			<bt:String id="MyButton.Label" DefaultValue="Apply Random Color" />
-			<bt:String id="ClearLabel.Label" DefaultValue="Clear Logs" /> 			
+			<bt:String id="MyGroup.Label" DefaultValue="Group Name" />
+			<bt:String id="RunBtn.Label" DefaultValue="Apply Random Color" />		
 		 </bt:ShortStrings>
 	
 		<bt:LongStrings>
-			<bt:String id="MyButton.Tooltip" DefaultValue="Applies a random color to a range of cells." />
+			<bt:String id="RunBtn.Tooltip" DefaultValue="Applies a random color to a range of cells." />
 		</bt:LongStrings>	  
     </Resources>
 	  
